@@ -96,13 +96,14 @@ public class TreeHandling {
         List<String> res = new ArrayList<>();
         int depth = parentDepth+1;
         TreeSet<Integer> children = treeItems.get(ident).getChildrenIdents();
-            for (Integer i : children) {
-                res.add(displayItem(i, depth));
-                finished.add(i);
-                if(hasSubtree(i)){
-                    res.addAll(recursiveDisplay(i, depth));
-                }
+        
+        for (Integer i : children) {
+            res.add(displayItem(i, depth));
+            finished.add(i);
+            if(hasSubtree(i)){
+                res.addAll(recursiveDisplay(i, depth));
             }
+        }
         return res;
     }
     

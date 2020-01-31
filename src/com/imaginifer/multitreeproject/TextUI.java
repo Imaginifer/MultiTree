@@ -30,9 +30,7 @@ public class TextUI {
     private boolean displayTree(){
         Scanner sc = new Scanner(System.in);
         List<String> items = treeHandling.displayTree();
-        for (String item : items) {
-            System.out.print("\n"+item);
-        }
+        items.forEach(item -> System.out.print("\n"+item));
         System.out.print("\nTo expand or select an item, type 'expand' or 'select' "
                 + "and its ident number, e.g. expand9\nSelecting or deselecting "
                 + "unexpanded items recursively applies this to all nested items.\n"
